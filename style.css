@@ -27,16 +27,19 @@ html, body {
 
 /* BODY - Layout centralizado com espaçamento */
 body {
-    display: grid; /* Usa Grid Layout para melhor controle de posicionamento */
-    place-items: center; /* Centraliza horizontalmente e verticalmente (atalho para justify-items e align-items) */
+    display: flex; /* Usa Flexbox para layout flexível em coluna */
+    flex-direction: column; /* Empilha elementos verticalmente (header, main) */
+    justify-content: center; /* Centraliza verticalmente no eixo principal */
+    align-items: center; /* Centraliza horizontalmente no eixo secundário */
     padding: 2rem; /* Espaçamento interno em todos os lados para margem de segurança */
+    gap: 0.5rem; /* Espaço pequeno entre header e main para proximidade */
 }
 
 /* HEADER - Cabeçalho com largura máxima e alinhamento central */
 header {
     width: min(1024px, 100%); /* Usa a menor entre 1024px ou 100% (responsivo) */
     text-align: center; /* Centraliza o texto horizontalmente */
-    margin-bottom: 2rem; /* Espaçamento abaixo do header separando do conteúdo principal */
+    margin-bottom: 0; /* Remove margem para aproximar do conteúdo (gap do body controla espaço) */
 }
 
 /* HEADING 1 - Título principal com fonte responsiva */

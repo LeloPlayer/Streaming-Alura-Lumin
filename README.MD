@@ -224,8 +224,6 @@ Este projeto está licenciado sob a **MIT License** - veja o arquivo [LICENSE](L
 
 <div align="center">
 
-**⭐ Se este projeto foi útil, considere deixar uma estrela!**
-
-Desenvolvido com 💜 e CSS
+ Vlw maninhos!! Ate o proximo project
 
 </div>

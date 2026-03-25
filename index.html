@@ -1,44 +1,77 @@
+<!-- DOCTYPE HTML5 - Define que este documento segue o padrão HTML5 -->
 <!DOCTYPE html>
+
+<!-- ELEMENTO HTML - Define idioma como Português Brasileiro para acessibilidade -->
 <html lang="pt-br">
+
 <head>
+    <!-- Codificação UTF-8 - Suporta caracteres especiais e acentuação -->
     <meta charset="UTF-8">
+    
+    <!-- Viewport - Define configurações de responsividade para dispositivos móveis -->
+    <!-- width=device-width: o layout respeita largura do dispositivo -->
+    <!-- initial-scale=1.0: zoom inicial em 100% -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- TITLE - Título exibido na aba do navegador e em buscadores -->
     <title>Netflix</title>
+    
+    <!-- STYLESHEET - Link externo para arquivo CSS com estilos visuais -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- HEADER - Seção de cabeçalho contendo título principal da página -->
     <header>
+        <!-- H1 - Heading de nível 1 (principal) com pergunta para o usuário -->
         <h1>Quem está assistindo?</h1>
     </header>
 
+    <!-- MAIN - Elemento semântico definindo conteúdo principal da página -->
     <main>
+        <!-- SECTION - Agrupa conteúdo temático relacionado (perfis de usuário) -->
+        <!-- aria-label: fornece descrição acessível para leitores de tela -->
         <section class="profiles" aria-label="Seleção de perfil">
+            
+            <!-- ARTICLE - Elemento semântico autossuficiente (cada perfil é independente) -->
+            <!-- class="profile": para aplicar estilos CSS específicos -->
+            <!-- tabindex="0": permite navegação via teclado (Tab), importante para acessibilidade -->
             <article class="profile" tabindex="0">
+                <!-- FIGURE - Container semântico para conteúdo ilustrativo (imagem + legenda) -->
                 <figure>
+                    <!-- IMG - Imagem de perfil com src (caminho) e alt (texto alternativo para acessibilidade) -->
                     <img src="/assets/Perfil-1.jpg" alt="figura esguia de estética gótica e melancólica, vestindo um traje formal roxo e verde com cartola">
+                    
+                    <!-- FIGCAPTION - Legenda semântica associada à imagem (nome do perfil) -->
                     <figcaption>Samuel</figcaption>
                 </figure>
             </article>
 
+            <!-- Segundo perfil com mesma estrutura -->
             <article class="profile" tabindex="0">
                 <figure>
                     <img src="/assets/Perfil-2.jpg" alt="retrato estilizado em pop art com alto contraste, exibindo uma figura de estética punk agressiva em tons vibrantes de rosa e roxo com texturas de retícula e colagem.">
-                    <figcaption>Jose</figcaption>
+                    <figcaption>José</figcaption>
                 </figure>
             </article>
+            
+            <!-- Terceiro perfil com mesma estrutura -->
             <article class="profile" tabindex="0">
                 <figure>
                     <img src="/assets/Perfil-3.jpg" alt="Um retrato cinematográfico de perfil mostra uma mulher com expressão resiliente diante de uma explosão dramática e detalhada ao fundo.">
-                    <figcaption>Samuel</figcaption>
+                    <figcaption>Ana</figcaption>
                 </figure>
             </article>
+            
+            <!-- Quarto perfil com mesma estrutura -->
             <article class="profile" tabindex="0">
                 <figure>
                     <img src="/assets/Perfil-4.jpg" alt="Um guerreiro medieval com expressão determinada e cicatrizes no rosto empunha uma espada em meio a uma intensa nevasca em uma floresta gélida.">
-                    <figcaption>Samuel</figcaption>
+                    <figcaption>Sueli</figcaption>
                 </figure>
             </article>
         </section>
     </main>
 </body>
+
+<!-- Fechamento do elemento HTML raiz -->
 </html>

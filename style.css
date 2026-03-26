@@ -137,24 +137,51 @@ figcaption {
 @media (max-width: 540px) {
     /* Reduz espaçamento em mobile para aproveitar espaço limitado */
     body {
-        padding: 1rem; /* Reduz padding de 2rem para 1rem */
+        padding: 0.8rem;
     }
 
     main {
-        padding: 1rem; /* Reduz padding interno do container principal */
+        padding: 0.8rem;
+        width: 100%;
+        max-width: 440px;
+        margin: 0 auto;
+        border-radius: 0.9rem;
     }
 
     header h1 {
-        font-size: 1.6rem; /* Texto menor em telas pequenas */
+        font-size: 1.45rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .profiles {
+        width: 100%;
     }
 
     .profile-list {
-        gap: 0.8rem;
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 0.95rem;
+        grid-template-columns: repeat(2, minmax(120px, 1fr));
+        row-gap: 1.2rem;
+        padding: 0.8rem 0;
+    }
+
+    .profile {
+        width: 132px;
+        padding: 0.7rem;
     }
 
     .profile img {
-        max-width: 90px;
+        max-width: 100px;
+        height: 100px;
+    }
+
+    figcaption {
+        font-size: 0.92rem;
+        margin-top: 0.4rem;
+    }
+
+    .profile:hover,
+    .profile:focus-visible {
+        transform: translateY(-3px);
     }
 }
 
@@ -195,6 +222,7 @@ figcaption {
 
     header h1 {
         font-size: clamp(2rem, 2.8vw + 1rem, 3rem);
+        margin-top: 50px;
     }
 
     .profile-list {

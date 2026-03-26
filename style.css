@@ -121,11 +121,19 @@ header h1,
     color: #fff; /* Branco puro para máximo contraste */
     letter-spacing: 0.03em; /* Espaçamento entre letras para elegância e legibilidade */
     margin: 0;
+    text-align: center;
 }
 
 .page-title {
     position: relative;
     top: 0.35rem;
+}
+
+/* DESKTOP - Estilos para telas grandes (a partir de 1024px) */
+@media (min-width: 1024px) {
+    .page-title {
+        top: -0.9rem;
+    }
 }
 
 /* MAIN - Container principal com fundo gradiente e sombra profunda */
@@ -242,6 +250,10 @@ figcaption {
         margin-bottom: 0.5rem;
     }
 
+    .page-title {
+        top: 0.5rem;
+    }
+
     .profiles {
         width: 100%;
     }
@@ -286,6 +298,10 @@ figcaption {
 
     header h1 {
         font-size: clamp(1.8rem, 2.5vw + 1rem, 2.6rem);
+    }
+
+    .page-title {
+        top: 0.35rem;
     }
 
     .profile-list {

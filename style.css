@@ -16,6 +16,26 @@
     --shadow: 0 16px 40px rgba(0, 0, 0, 0.6); /* Sombra profunda para elevação de elementos */
 }
 
+body.light {
+    --bg: #f5f5f5;
+    --surface: #ffffff;
+    --surface-contrast: #f0f0f0;
+    --text: #1f1f1f;
+    --text-muted: #626262;
+    --primary: #d0021b;
+    --shadow: 0 16px 30px rgba(0, 0, 0, 0.2);
+}
+
+body.dark {
+    --bg: #141414;
+    --surface: #1f1f1f;
+    --surface-contrast: #2a2a2a;
+    --text: #ffffff;
+    --text-muted: #e5e5e5;
+    --primary: #e50914;
+    --shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+}
+
 /* ESTILO GLOBAL - HTML e BODY ocupam toda a tela com tema escuro */
 html, body {
     min-height: 100vh; /* Garante que o elemento ocupe no mínimo a altura da viewport */
@@ -38,15 +58,74 @@ body {
 /* HEADER - Cabeçalho com largura máxima e alinhamento central */
 header {
     width: min(1024px, 100%); /* Usa a menor entre 1024px ou 100% (responsivo) */
-    text-align: center; /* Centraliza o texto horizontalmente */
     margin-bottom: 0; /* Remove margem para aproximar do conteúdo (gap do body controla espaço) */
 }
 
+.top-controls {
+    display: none;
+}
+
+#theme-toggle {
+    position: fixed;
+    top: 0.8rem;
+    left: 0.8rem;
+    width: 42px;
+    height: 42px;
+    background-color: rgba(255, 255, 255, 0.16);
+    color: var(--text);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    font-size: 1.1rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
+    z-index: 1000;
+}
+
+#theme-toggle::before {
+    content: "☾";
+    font-size: 1.2rem;
+    transition: transform 0.2s ease;
+}
+
+#theme-toggle.light::before {
+    content: "☀";
+}
+
+#theme-toggle::before {
+    content: "☾";
+    font-size: 1rem;
+    transition: transform 0.2s ease;
+}
+
+#theme-toggle.light::before {
+    content: "☀";
+}
+
+#theme-toggle:hover,
+#theme-toggle:focus-visible {
+    background-color: rgba(255, 255, 255, 0.28);
+    transform: translateY(-1px);
+    outline: none;
+}
+
 /* HEADING 1 - Título principal com fonte responsiva */
-header h1 {
+header h1,
+.page-title {
     font-size: clamp(1.7rem, 2.5vw + 1rem, 3rem); /* Tamanho fluido: mínimo 1.7rem, máximo 3rem, cresce com viewport */
     color: #fff; /* Branco puro para máximo contraste */
     letter-spacing: 0.03em; /* Espaçamento entre letras para elegância e legibilidade */
+    margin: 0;
+}
+
+.page-title {
+    position: relative;
+    top: 0.35rem;
 }
 
 /* MAIN - Container principal com fundo gradiente e sombra profunda */
@@ -58,6 +137,16 @@ main {
     box-shadow: var(--shadow); /* Sombra profunda para elevação do container */
     padding: 1.5rem; /* Espaçamento interno para conteúdo */
 }
+
+body.light main {
+    background: linear-gradient(180deg, rgba(245,245,245,0.95) 0%, rgba(239,239,239,0.98) 100%);
+    border: 1px solid rgba(0,0,0,0.08);
+}
+
+body.light h1, body.light figcaption, body.light #theme-toggle {
+    color: var(--text);
+}
+
 
 /* .PROFILES - Container de grade para exibir múltiplos perfis responsivamente */
 .profiles,

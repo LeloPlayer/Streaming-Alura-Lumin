@@ -30,45 +30,47 @@
     <main>
         <!-- SECTION - Agrupa conteúdo temático relacionado (perfis de usuário) -->
         <!-- aria-label: fornece descrição acessível para leitores de tela -->
-        <section class="profiles" aria-label="Seleção de perfil">
-            
-            <!-- ARTICLE - Elemento semântico autossuficiente (cada perfil é independente) -->
-            <!-- class="profile": para aplicar estilos CSS específicos -->
-            <!-- tabindex="0": permite navegação via teclado (Tab), importante para acessibilidade -->
-            <article class="profile" tabindex="0">
-                <!-- FIGURE - Container semântico para conteúdo ilustrativo (imagem + legenda) -->
-                <figure>
-                    <!-- IMG - Imagem de perfil com src (caminho) e alt (texto alternativo para acessibilidade) -->
-                    <img src="/assets/Perfil-1.jpg" alt="figura esguia de estética gótica e melancólica, vestindo um traje formal roxo e verde com cartola">
-                    
-                    <!-- FIGCAPTION - Legenda semântica associada à imagem (nome do perfil) -->
-                    <figcaption>Samuel</figcaption>
-                </figure>
-            </article>
+        <section aria-label="Seleção de perfil">
+            <ul class="profiles" aria-label="Perfis de usuário">
+                <li>
+                    <ol class="profile-list">
+                        <li class="profile" tabindex="0">
+                            <!-- FIGURE - Container semântico para conteúdo ilustrativo (imagem + legenda) -->
+                            <figure>
+                                <!-- IMG - Imagem de perfil com src (caminho) e alt (texto alternativo para acessibilidade) -->
+                                <img src="/assets/Perfil-1.jpg" alt="figura esguia de estética gótica e melancólica, vestindo um traje formal roxo e verde com cartola">
+                                
+                                <!-- FIGCAPTION - Legenda semântica associada à imagem (nome do perfil) -->
+                                <figcaption>Samuel</figcaption>
+                            </figure>
+                        </li>
 
-            <!-- Segundo perfil com mesma estrutura -->
-            <article class="profile" tabindex="0">
-                <figure>
-                    <img src="/assets/Perfil-2.jpg" alt="retrato estilizado em pop art com alto contraste, exibindo uma figura de estética punk agressiva em tons vibrantes de rosa e roxo com texturas de retícula e colagem.">
-                    <figcaption>José</figcaption>
-                </figure>
-            </article>
-            
-            <!-- Terceiro perfil com mesma estrutura -->
-            <article class="profile" tabindex="0">
-                <figure>
-                    <img src="/assets/Perfil-3.jpg" alt="Um retrato cinematográfico de perfil mostra uma mulher com expressão resiliente diante de uma explosão dramática e detalhada ao fundo.">
-                    <figcaption>Ana</figcaption>
-                </figure>
-            </article>
-            
-            <!-- Quarto perfil com mesma estrutura -->
-            <article class="profile" tabindex="0">
-                <figure>
-                    <img src="/assets/Perfil-4.jpg" alt="Um guerreiro medieval com expressão determinada e cicatrizes no rosto empunha uma espada em meio a uma intensa nevasca em uma floresta gélida.">
-                    <figcaption>Sueli</figcaption>
-                </figure>
-            </article>
+                        <!-- Segundo perfil com mesma estrutura -->
+                        <li class="profile" tabindex="0">
+                            <figure>
+                                <img src="/assets/Perfil-2.jpg" alt="retrato estilizado em pop art com alto contraste, exibindo uma figura de estética punk agressiva em tons vibrantes de rosa e roxo com texturas de retícula e colagem.">
+                                <figcaption>José</figcaption>
+                            </figure>
+                        </li>
+                        
+                        <!-- Terceiro perfil com mesma estrutura -->
+                        <li class="profile" tabindex="0">
+                            <figure>
+                                <img src="/assets/Perfil-3.jpg" alt="Um retrato cinematográfico de perfil mostra uma mulher com expressão resiliente diante de uma explosão dramática e detalhada ao fundo.">
+                                <figcaption>Ana</figcaption>
+                            </figure>
+                        </li>
+                        
+                        <!-- Quarto perfil com mesma estrutura -->
+                        <li class="profile" tabindex="0">
+                            <figure>
+                                <img src="/assets/Perfil-4.jpg" alt="Um guerreiro medieval com expressão determinada e cicatrizes no rosto empunha uma espada em meio a uma intensa nevasca em uma floresta gélida.">
+                                <figcaption>Sueli</figcaption>
+                            </figure>
+                        </li>
+                    </ol>
+                </li>
+            </ul>
         </section>
     </main>
 </body>

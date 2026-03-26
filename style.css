@@ -60,6 +60,13 @@ main {
 }
 
 /* .PROFILES - Container de grade para exibir múltiplos perfis responsivamente */
+.profiles,
+.profile-list {
+    list-style: none; /* Remove marcadores de listas */
+    padding: 0;
+    margin: 0;
+}
+
 .profiles {
     display: grid; /* Usa CSS Grid para layout flexível */
     gap: 1rem; /* Espaçamento uniforme entre perfis */

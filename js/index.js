@@ -5,24 +5,26 @@ document.addEventListener('DOMContentLoaded', function() {
     splash.id = 'splash-screen';
     splash.innerHTML = `
         <div class="splash-content">
-            <img src="/assets/logo.png" alt="Netflix" class="splash-logo">
+            <img src="./assets/logo.png" alt="Lumini" class="splash-logo">
             <div class="splash-loader"></div>
         </div>
     `;
 
-    // Adicionar ao body
+    // Adicionar ao body (primeiro para evitar flash)
     document.body.appendChild(splash);
+    document.body.style.overflow = 'hidden';
 
-    // Mostrar splash
+    // Mostrar splash com delay mínimo para evitar flash
     setTimeout(() => {
         splash.classList.add('show');
     }, 100);
 
-    // Esconder splash após 3 segundos
+    // Esconder splash após 3.5 segundos
     setTimeout(() => {
-        splash.classList.add('hide');
+        splash.classList.add('fade-out');
         setTimeout(() => {
             splash.remove();
+            document.body.style.overflow = 'auto';
         }, 500); // Tempo da transição
-    }, 3000);
+    }, 3500);
 });

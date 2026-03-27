@@ -75,6 +75,36 @@
     </footer>
 
     <script type="module" src="js/main.js"></script>
+    <script>
+        // Função para obter parâmetros da URL
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            const regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            const results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        // Obter perfil e imagem dos parâmetros
+        const perfil = getUrlParameter('perfil');
+        const imagem = getUrlParameter('imagem');
+
+        // Atualizar a imagem do perfil se imagem estiver presente
+        if (imagem) {
+            const profileIcon = document.querySelector('.profile-icon');
+            if (profileIcon) {
+                profileIcon.src = '..' + imagem; // Ajustar caminho relativo
+                profileIcon.alt = 'Perfil de ' + perfil;
+            }
+        }
+
+        // Atualizar o nome do perfil
+        if (perfil) {
+            const kidsLink = document.querySelector('.kids-link');
+            if (kidsLink) {
+                kidsLink.textContent = perfil;
+            }
+        }
+    </script>
 </body>
 
 </html>

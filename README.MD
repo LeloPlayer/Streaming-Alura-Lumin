@@ -1,229 +1,149 @@
-# 🎬 Netflix Profile Selector
+# 🎬 Lumini - Clone Netflix (Alura)
 
-> Tela de seleção de perfis inspirada na Netflix - Projeto desenvolvido durante imersão front-end da Alura com uso de IA
-
-![Status](https://img.shields.io/badge/Status-Concluído-success?style=flat-square)
-![HTML5](https://img.shields.io/badge/HTML5-Semântico-orange?style=flat-square)
-![CSS3](https://img.shields.io/badge/CSS3-Responsivo-blue?style=flat-square)
-![License](https://img.shields.io/badge/Licença-MIT-blueviolet?style=flat-square)
-
----
-
-## 📋 Sobre o Projeto
-
-Este projeto implementa uma **interface moderna de seleção de perfis** inspirada no design visual da Netflix. Desenvolvido com foco em **semântica HTML5**, **acessibilidade web** e **responsividade**, demonstrando boas práticas de desenvolvimento front-end.
-
-### ✨ Destaques
-
-- ✅ **HTML5 Semântico** - Uso correto de tags semânticas (`<header>`, `<main>`, `<section>`, `<article>`, `<figure>`)
-- ♿ **Acessibilidade** - `aria-label`, `tabindex`, `alt text` descritivo para inclusive design
-- 📱 **Responsivo** - Grid CSS adaptativo com `auto-fit` e `minmax()`
-- 🎨 **Design Netflix-like** - Tema escuro com gradientes, sombras e animações suaves
-- ⌨️ **Navegação por Teclado** - Suporte completo com `:focus-visible`
-- 🎯 **Performance** - CSS otimizado com variáveis CSS e transições eficientes
+[![Status](https://img.shields.io/badge/Status-Concluído-success?style=flat-square)](https://github.com)
+[![HTML5](https://img.shields.io/badge/HTML5-Semântico-orange?style=flat-square)](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
+[![CSS3](https://img.shields.io/badge/CSS3-Moderno-blue?style=flat-square)](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JS-Vanilla-yellow?style=flat-square)](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
+[![License](https://img.shields.io/badge/Licença-MIT-blueviolet?style=flat-square)](LICENSE)
 
 ---
 
-## 🚀 Tecnologias Utilizadas
+## 📱 Sobre o Projeto
 
-| Tecnologia | Descrição |
-|:---:|:---|
-| **HTML5** | Marcação semântica e estrutura acessível |
-| **CSS3** | Grid Layout, Flexbox, Variáveis CSS, Gradientes |
-| **JavaScript** | (Ready for interactivity) |
+**Lumini** é um **clone moderno da interface Netflix** desenvolvido durante a imersão Front-End da Alura. Recria fielmente a experiência de **splash screen de carregamento**, **seleção de perfis** e **navegação para catálogo**.
+
+### ✨ Funcionalidades Implementadas
+
+- 🎥 **Splash Screen** - Tela de carregamento Netflix-style com logo animada (scale-in + float) e spinner rotativo (3.5s)
+- 👥 **Seleção de Perfis** - 4 perfis responsivos com hover/focus effects e navegação por teclado
+- 🌙 **Tema Claro/Escuro** - Toggle automático (system pref) + persistente (localStorage)
+- 📱 **Totalmente Responsivo** - Mobile-first com CSS Grid adaptativo
+- ♿ **Acessível** - ARIA labels, alt descritivos, keyboard navigation, alto contraste
+- 🔗 **Navegação** - Links para `catalogo/catalogo.html` com parâmetros de perfil
+- ⚡ **Performance** - CSS vars, animações GPU-accelerated, sem frameworks
 
 ---
 
-## 📁 Estrutura do Projeto
+## 🚀 Tecnologias
+
+| Frontend | Ferramentas |
+|:--------|:-----------:|
+| **HTML5** | Semântica + Acessibilidade |
+| **CSS3** | Grid, Flexbox, Vars, Animações, Gradientes |
+| **JavaScript** | Vanilla - Splash logic + Theme manager |
+
+**Sem dependências externas!** Funciona offline.
+
+---
+
+## 📁 Estrutura
 
 ```
-netflix-alura/
-├── index.html          # Marcação semântica com perfis
-├── style.css           # Estilos inspirados na Netflix
-├── README.MD           # Este arquivo
-└── assets/             # Imagens dos perfis
-    ├── Perfil-1.jpg
-    ├── Perfil-2.jpg
-    ├── Perfil-3.jpg
-    └── Perfil-4.jpg
-```
-
----
-
-## 🎯 Funcionalidades
-
-### Layout Centralizado
-- Perfis organizados em grade responsiva
-- Centralização automática em qualquer tamanho de tela
-- Título próximo aos ícones de perfil
-
-### Interatividade Visual
-- **Hover Effect**: Cards levantam com sombra profunda
-- **Focus State**: Suporte para navegação por teclado
-- **Animações Suaves**: Transições em `transform`, `box-shadow` e `border-color`
-- **Indicador Visual**: Borda vermelha (Netflix red #e50914) ao interagir
-
-### Design Responsivo
-- Grid adaptativo com `repeat(auto-fit, minmax(140px, 1fr))`
-- Ajustes automáticos para mobile (até 540px)
-- Tipografia fluida com `clamp()`
-
----
-
-## 🎨 Paleta de Cores
-
-```css
---bg: #141414              /* Fundo principal (quase preto) */
---surface: #1f1f1f         /* Superfície secundária */
---surface-contrast: #2a2a2a /* Contraste para profundidade */
---text: #ffffff            /* Texto principal (branco) */
---text-muted: #e5e5e5      /* Texto secundário (cinza claro) */
---primary: #e50914         /* Destaque (Netflix red) */
+Netflix Alura/
+├── index.html              # Splash + Seleção de perfis
+├── style.css               # Estilos + animações + temas
+├── theme.js                # Toggle claro/escuro
+├── js/index.js             # Splash screen logic
+├── assets/                 # Logo + perfis
+│   ├── logo.png
+│   ├── Perfil-1.jpg ... -4.jpg
+└── catalogo/               # Catálogo de filmes (página destino)
+    ├── catalogo.html
+    ├── catalogo.css
+    └── js/...
 ```
 
 ---
 
-## 📱 Responsividade
+## 🎯 Como Executar
 
-### Desktop (1024px+)
-- 4 perfis por linha em telas grandes
-- Espaçamento amplo (2rem)
-- Título com tamanho máximo
-
-### Mobile (até 540px)
-- Grid adaptável com colunas redimensionadas
-- Espaçamento reduzido (1rem)
-- Tipografia otimizada
-
----
-
-## ♿ Acessibilidade
-
-Implementadas as melhores práticas de inclusive design:
-
-```html
-<!-- ARIA Labels para contexto semântico -->
-<section class="profiles" aria-label="Seleção de perfil">
-
-<!-- Alt text descritivo para imagens -->
-<img alt="figura esguia de estética gótica e melancólica...">
-
-<!-- Navegação por teclado -->
-<article class="profile" tabindex="0">
+1. **Abra `index.html`** no browser (Live Server recomendado)
 ```
-
-✅ **Suporte para:**
-- Leitores de tela
-- Navegação via teclado (Tab, Enter)
-- Focus visual claramente identificável
-- Contraste de cores (WCAG AA)
-
----
-
-## 🛠️ Como Usar
-
-### 1. Clone o Repositório
-```bash
-git clone https://github.com/seu-usuario/netflix-alura.git
-cd netflix-alura
-```
-
-### 2. Abra no Navegador
-```bash
-# Opção 1: Abra direto o arquivo
-open index.html
-
-# Opção 2: Use um servidor local (recomendado)
+# VS Code + Live Server extension
+# Ou Python:
 python -m http.server 8000
 # Acesse: http://localhost:8000
 ```
 
-### 3. Customize os Perfis
-Edite `index.html` para adicionar seus perfis:
-```html
-<article class="profile" tabindex="0">
-    <figure>
-        <img src="/assets/seu-perfil.jpg" alt="Descrição do perfil">
-        <figcaption>Seu Nome</figcaption>
-    </figure>
-</article>
+2. **Teste a Splash** - Aguarde 3.5s para ver perfis
+3. **Selecione Perfil** - Vai para catálogo com parâmetros
+4. **Toggle Tema** ☀️/☾ no canto superior esquerdo
+
+---
+
+## 📱 Demo Responsiva
+
+| Mobile | Tablet | Desktop |
+|:------:|:------:|:-------:|
+| ![Mobile](https://via.placeholder.com/300x600/141414/ffffff?text=Mobile) | ![Tablet](https://via.placeholder.com/500x400/141414/ffffff?text=Tablet) | ![Desktop](https://via.placeholder.com/1200x300/141414/ffffff?text=Desktop) |
+
+---
+
+## 🎨 Design System
+
+### Cores (CSS Vars)
+```css
+:root {
+  --bg: #141414;           /* Fundo Netflix */
+  --primary: #e50914;      /* Vermelho destaque */
+  --text: #ffffff;         /* Texto claro */
+}
+body.light { /* Overrides para modo claro */ }
 ```
 
----
-
-## 💡 Conceitos Implementados
-
-### HTML Semântico
-- `<header>` - Seção de cabeçalho
-- `<main>` - Conteúdo principal
-- `<section>` - Grupo temático (perfis)
-- `<article>` - Elemento autossuficiente
-- `<figure>` + `<figcaption>` - Imagem com legenda
-
-### CSS Moderno
-- **CSS Grid** - `repeat(auto-fit, minmax())` para layout responsivo
-- **Flexbox** - Centralização sem esforço
-- **Variáveis CSS** - Tema reutilizável
-- **Gradientes** - Radial e linear para profundidade
-- **Sombras** - Elevação visual com `box-shadow`
-
-### Acessibilidade Web
-- **ARIA Attributes** - Contexto semântico extra
-- **Semantic HTML** - Significado estrutural claro
-- **Keyboard Navigation** - `tabindex` e `:focus-visible`
-- **Color Contrast** - Texto legível (WCAG AA+)
+### Animações
+- **Splash**: Logo `scale(0.8→1)` + `logoFloat` (Y translate)
+- **Spinner**: `@keyframes spin` 360°
+- **Perfis**: `translateY(-5px)` + shadow lift
+- **Transições**: `cubic-bezier` suaves, 0.25s-0.8s
 
 ---
 
-## 🎓 Aprendizados
+## ♿ Acessibilidade (WCAG AA)
 
-Este projeto serviu para consolidar:
-
-- ✨ Uso correto de **HTML5 semântico**
-- 🎨 Criação de **layouts responsivos com CSS Grid**
-- ♿ Implementação de **acessibilidade web**
-- 🔄 **Variáveis CSS** para temas dinâmicos
-- ⚡ **CSS Transitions** para animações suaves
-- 📱 **Mobile-first** e **progressive enhancement**
+- ✅ **Semântica HTML5** (`<main>`, `<figure>`, `<figcaption>`)
+- ✅ **ARIA Labels** em seções
+- ✅ **Keyboard Focus**: `:focus-visible` + `tabindex=0`
+- ✅ **Alt Texts** descritivos nas imagens
+- ✅ **Contraste** 4.5:1+ em textos
 
 ---
 
-## 🚀 Possíveis Melhorias Futuras
+## 🔧 Conceitos Aprendidos
 
-- [ ] Adicionar JavaScript para interatividade funcional
-- [ ] Animação de carregamento ao selecionar perfil
-- [ ] Modo claro (light theme)
-- [ ] PWA (Progressive Web App) para offline
-- [ ] Testes de acessibilidade com ferramentas (Lighthouse, axe)
-- [ ] Deploy no GitHub Pages ou Vercel
+- **Splash Screens** JS/CSS coordenados
+- **CSS Custom Properties** para temas dinâmicos
+- **CSS Grid Responsivo** `auto-fit/minmax`
+- **Animações Performáticas** `transform/opacity`
+- **localStorage** para preferências usuário
+- **Overflow Hidden** durante loading
 
 ---
 
-## 📞 Contato
+## 🚀 Próximos Passos
 
-Desenvolvido durante a **Imersão Front-End Alura** com uso de IA generativa.
+- [ ] Integração completa com `catalogo/js`
+- [ ] Player de vídeo simulado
+- [ ] Autenticação mock
+- [ ] PWA com Service Worker
+- [ ] Testes unitários (Vitest/Jest)
+- [ ] Deploy Vercel/Netlify
 
-- **GitHub**: [github.com](https://github.com)
-- **Portfolio**: [seu-portfolio.com](https://seu-portfolio.com)
+---
+
+## 📞 Autor
+
+Desenvolvido por **Samuel** durante **Imersão Alura**
+
+[![GitHub](https://img.shields.io/badge/GitHub-Perfil-black?style=social&logo=github)](https://github.com)
 
 ---
 
 ## 📄 Licença
 
-Este projeto está licenciado sob a **MIT License** - veja o arquivo [LICENSE](LICENSE) para detalhes.
+[MIT License](LICENSE) - Use livremente! ✨
 
 ---
 
-### 🙏 Agradecimentos
+**Vlw Alura! 🎓 Feito com ❤️ e muito CSS.**
 
-- [Alura](https://www.alura.com.br) - Pela excelente imersão
-- [Netflix](https://www.netflix.com) - Design inspirador
-- Web Standards - HTML/CSS/Acessibilidade
-
----
-
-<div align="center">
-
- Vlw maninhos!! Ate o proximo project
-
-</div>

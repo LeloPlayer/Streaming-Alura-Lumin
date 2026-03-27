@@ -129,6 +129,17 @@ header h1,
     top: 0.35rem;
 }
 
+/* LOGO - Imagem da logo no topo */
+.logo {
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: clamp(100px, 15vw, 180px); /* Largura responsiva menor: mínimo 100px, máximo 180px */
+    filter: brightness(0.9); /* Ajusta brilho para melhor integração com o tema */
+    z-index: 10; /* Garante que fique acima de outros elementos */
+}
+
 /* DESKTOP - Estilos para telas grandes (a partir de 1024px) */
 @media (min-width: 1024px) {
     .page-title {
@@ -230,6 +241,31 @@ figcaption {
     letter-spacing: 0.02em; /* Espaçamento entre letras para elegância */
 }
 
+/* .MANAGE-PROFILES-BUTTON - Botão para gerenciar perfis */
+.manage-profiles-button {
+    width: 150px;
+    background: linear-gradient(145deg, var(--surface), var(--surface-contrast)); /* Gradiente diagonal para efeito 3D sutil */
+    border: 1px solid rgba(255, 255, 255, 0.07); /* Borda translúcida para definição */
+    border-radius: 1rem; /* Cantos arredondados para consistência */
+    color: var(--text-muted); /* Cor cinza claro para texto */
+    font-size: 0.95rem; /* Tamanho ligeiramente menor que o padrão */
+    padding: 1rem; /* Espaçamento interno */
+    cursor: pointer; /* Indica que é clicável */
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; /* Animação suave para interações */
+    outline: none; /* Remove outline padrão do navegador */
+    text-align: center;
+    margin: 1rem auto 0; /* Centraliza horizontalmente e adiciona margem superior */
+    display: block;
+}
+
+/* .MANAGE-PROFILES-BUTTON HOVER/FOCUS - Estados interativos com animações */
+.manage-profiles-button:hover,
+.manage-profiles-button:focus-visible {
+    transform: translateY(-5px); /* Levanta o botão 5px ao passar o mouse ou focar (efeito de elevação) */
+    box-shadow: 0 20px 40px rgba(0,0,0,.45), 0 0 0 1px rgba(255,255,255,.12); /* Sombra profunda + borda interna sutil */
+    border-color: rgba(229,9,20,.7); /* Borda muda para vermelho Netflix com transparência */
+}
+
 /* MEDIA QUERY - Estilos para telas pequenas (até 540px) */
 @media (max-width: 540px) {
     /* Reduz espaçamento em mobile para aproveitar espaço limitado */
@@ -283,6 +319,12 @@ figcaption {
     .profile:hover,
     .profile:focus-visible {
         transform: translateY(-3px);
+    }
+
+    .manage-profiles-button {
+        width: 132px;
+        padding: 0.7rem;
+        font-size: 0.92rem;
     }
 }
 
